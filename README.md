@@ -1,3 +1,2 @@
-# Dothraki and Fugue - a Landchase App
-Mobile app to enable playing Magic: The Gathering with custom "A song of ice and fire" planes.
-It's also possible to load custom planes, or use vanilla planes (Download needed)
+# War of the Five Worlds
+Mobile app to enable playing Magic: The Gathering with custom planes and roles from various fantasy sources.
