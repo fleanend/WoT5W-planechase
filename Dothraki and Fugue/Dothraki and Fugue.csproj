@@ -108,85 +108,7 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Highgarden.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Crasters Keep.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\d0_Asshai.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Fist of the First Men.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Great Grass Sea.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Harrenhal.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Kings Landing.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Meereen.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\n0_Asshai by the Shadow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Old Valyria.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Pentos.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\ph_A Change of Seasons.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\ph_Red Comet.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\ph_Red Death.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Pyke.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Qarth.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Red Waste.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\The Citadel.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\The Crossing.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\The Eyrie.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\The Neck.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Vaes Dothrak.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Winterfell.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Braavos.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Casterly Rock.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Summer.png" />
@@ -207,55 +129,10 @@
     <AndroidResource Include="Resources\drawable\d.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Princes Pass.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Riverlands.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Wolfswood.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\d1_Golden Fields.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Isle of Faces.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Lonely Light.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\n1_Ghost Grass Fields.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Tyrosh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Volantis.png" />
-  </ItemGroup>
-  <ItemGroup>
     <XamarinComponentReference Include="xamandroidsupportdesign">
       <Visible>False</Visible>
       <Version>23.4.0.1</Version>
     </XamarinComponentReference>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Blackwater Bay.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Lorath.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Vaes Tolorro.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Shadowlands.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Storms End.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Sunspear.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\tooltip_w_2.png" />
@@ -315,13 +192,70 @@
     <AndroidResource Include="Resources\drawable\tooltip_w_1.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\The Wall.png" />
+    <AndroidAsset Include="Assets\Cards\ph_lotr_Aldudenie.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Oldtown.png" />
+    <AndroidAsset Include="Assets\Cards\wit_Beauclair.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Cards\Norvos.png" />
+    <AndroidAsset Include="Assets\Cards\got_Casterly Rock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Cards\lotr_Gondolin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Cards\got_Great Grass Sea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Cards\tes_Imperial City.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Cards\dnd_Luskan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Cards\lotr_Mordor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Cards\ph_tes_Oblivion Crisis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Cards\ph_got_Red Comet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Cards\ph_dnd_Tearfall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Cards\lotr_The Shire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Cards\dnd_The Underdark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Cards\got_The Wall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Cards\wit_Velen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Cards\wit_Vizima.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Cards\tes_Vvardenfell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Cards\ph_wit_Wild Hunt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Cards\dnd_Ashenwood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Cards\tes_Auridon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\sorcerericon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

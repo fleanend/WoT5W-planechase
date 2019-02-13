@@ -12,7 +12,7 @@ using UK.CO.Senab.Photoview;
 //using Android.Locations.GpsStatus;
 
 namespace Dothraki_and_Fugue {
-    [Activity(Label = "Dothraki and Fugue", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Landscape)]
+    [Activity(Label = "Wot5W", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Landscape)]
 
 
     public class MainActivity : Activity, GestureDetector.IOnGestureListener
@@ -20,6 +20,7 @@ namespace Dothraki_and_Fugue {
         GestureDetector _gestureDetector;
         Card _currentPlane;
         ImageView _currentPlaneView;
+        ImageButton _phenomenon_button;
         AssetManager _assets;
         Dialog _dialog;
         List<Card> _cards;
@@ -38,6 +39,8 @@ namespace Dothraki_and_Fugue {
             var content = _assets.List("Cards");
             _cards = new List<Card>();// = ArrayList<Card>
             _currentPlaneView = FindViewById<ImageView>(Resource.Id.imageView1);
+            _phenomenon_button = FindViewById<ImageButton>(Resource.Id.imageButton1);
+            
             _gestureDetector = new GestureDetector(this);
            
             if (_done == 1)
@@ -68,9 +71,12 @@ namespace Dothraki_and_Fugue {
             }
             _cards = Randomize(_cards);
 
-            
+
+            _phenomenon_button.Visibility = ViewStates.Visible;
+            _phenomenon_button.SetImageResource(Resource.Drawable.sorcerericon);
+
             // set image to ImageView
-            
+
             _currentPlaneView.SetScaleType(ImageView.ScaleType.FitCenter);
             _currentPlane = _cards[0];
             _currentPlane.visited = true;
