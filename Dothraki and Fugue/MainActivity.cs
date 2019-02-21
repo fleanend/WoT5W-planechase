@@ -9,6 +9,7 @@ using Android.Graphics;
 using Android.Util;
 using Android.Views;
 using UK.CO.Senab.Photoview;
+using System;
 //using Android.Locations.GpsStatus;
 
 namespace Dothraki_and_Fugue {
@@ -21,6 +22,8 @@ namespace Dothraki_and_Fugue {
         Card _currentPlane;
         ImageView _currentPlaneView;
         ImageButton _phenomenon_button;
+        ImageButton _upleft_button;
+        ImageButton _downleft_button;
         AssetManager _assets;
         Dialog _dialog;
         List<Card> _cards;
@@ -40,7 +43,13 @@ namespace Dothraki_and_Fugue {
             _cards = new List<Card>();// = ArrayList<Card>
             _currentPlaneView = FindViewById<ImageView>(Resource.Id.imageView1);
             _phenomenon_button = FindViewById<ImageButton>(Resource.Id.imageButton1);
-            
+            _upleft_button = FindViewById<ImageButton>(Resource.Id.imageButton2);
+            _downleft_button = FindViewById<ImageButton>(Resource.Id.imageButton3);
+
+            _phenomenon_button.Visibility = ViewStates.Invisible;
+            _upleft_button.Visibility = ViewStates.Invisible;
+            _downleft_button.Visibility = ViewStates.Invisible;
+
             _gestureDetector = new GestureDetector(this);
            
             if (_done == 1)
@@ -71,8 +80,6 @@ namespace Dothraki_and_Fugue {
             }
             _cards = Randomize(_cards);
 
-
-            _phenomenon_button.Visibility = ViewStates.Visible;
             _phenomenon_button.SetImageResource(Resource.Drawable.sorcerericon);
 
             // set image to ImageView
@@ -128,8 +135,17 @@ namespace Dothraki_and_Fugue {
             }
             _currentPlane = _cards[_index];
             _currentPlaneView.SetImageDrawable(_currentPlane.Bm);
+            _plane_logic();
             _currentPlane.visited = true;
             return true;
+        }
+
+        private void _plane_logic()
+        {
+            if (_currentPlane.Name == "dnd_Tearfall")
+            {
+                _phenomenon_button.Visibility = ViewStates.Visible;
+            }
         }
 
         protected override void OnDestroy()
