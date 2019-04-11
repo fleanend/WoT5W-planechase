@@ -1,0 +1,50 @@
+﻿Wild Magic! Wild Magic! Wild Magic ends.
+Your opponents reveal their hands.
+Create a 3/3 colorless Construct artifact creature token named Tridrone with “When this creature dies, create a 2/2 colorless Construct artifact creature token named Duodrone with ‘When this creature dies, create a 1/1 colorless Construct artifact creature token named Monodrone’”.
+The active plane deals 6 damage to each creature and each player.
+Destroy target creature.
+Choose target creature, then flip a coin. If you win the flip, double that creature’s power and toughness otherwise halve it, round down each time.
+For each creature you control, choose an opponent at random. That creature attacks that player this combat if able.
+Regenerate all creatures you control. 
+The next 13 times a source would deal damage to you, it deals that much damage minus 1 instead. The 14th time Wild Magic ends.
+Tap all creatures your opponents control, they do not untap next untap step unless they have vigilance, shadow or flying. Creatures lose horsemanship and haste and cannot gain horsemanship and haste until your next turn.
+As you cast instants and sorcery spells this turn they gain hexproof and deathtouch.
+Your next turn you can’t cast spells during your main phases. Wild Magic ends.
+Fateseal 1, fateseal 1.
+Until the end of your next turn you may cast spells as though they had flash.
+Creatures can’t be blocked this turn.
+Teferi’s protection Wild Magic ends.
+Until your next turn whenever a source would deal damage to a permanent or player, it deals double that damage instead.
+Flip a coin. If you win the flip, shuffle your graveyard into your deck. If you lose the flip, put the top X cards from your library into your graveyard, where X is the number of cards in your graveyard.
+Each opponent creates a 0/3 blue Flumph creature token with flying, defender and “whenever this creature dies, Wild Magic ends”.
+Flip two coins. You gain 10 life for each coin that comes up heads.
+The next time a creature with flying enters the battlefield or attacks, Wild Magic ends.
+Exile target permanent you own, then return it to the battlefield under your control.
+Until end of turn creatures you control gain flying.
+Create a 2/2 white Unicorn creature token with vigilance and lifelink.
+Until your next turn whenever a player casts a noncreature spell, counter that spell. That player creates X 0/1 green Ooze creature tokens, where X is the spell’s converted mana cost.
+Until your next turn, you and permanents you control gain hexproof.
+You gain protection from planes. Wild Magic ends.
+Tap all permanents you control, untap them at your next end step.
+Destroy all unattached artifacts.
+Return target nonland card with the lowest nonland mana cost from your graveyard to your hand.
+Until your next turn whenever a player taps a land, tap all lands they control, whenever a player attacks with a creature, that player must attack with all creatures.
+Until your next turn, prevent all damage that would be dealt to any player.
+This plane deals 3 damage to any target. This plane deals 3 damage to any target. This plane deals 3 damage to any target. 
+For each creature you control flip a coin. Each creature whose coin comes up tails must attack this turn if able.
+Creatures you control phase out. The next time you cast a spell all phased-out creatures you control phase in. Wild Magic ends.
+Until your next turn whenever a source would deal damage to you, it deals half that damage rounded down instead.
+Put a -1/-1 count on target creature. At the beginning of the next turn’s upkeep, proliferate.
+Until your next turn, creatures can’t attack you or a planeswalker you control unless their controller pays 2 for each creature they control that’s attacking you.
+Exile target creature. Its controller reveals cards from the top of their library until they reveal a creature card. The player puts that card onto the battlefield, than shuffles all other cards revealed this way into their library.
+Each player gains 1 life. Wild Magic ends.
+Untap all creatures you control. After this phase, there is an additional combat phase followed by an additional main phase.
+Each opponent loses 3 life. You gain life equal to the life lost this way.
+Create a token that’s a copy of a nonland permanent.
+Choose a creature at random. It gains flying.
+Planeswalk away from this plane. Wild Magic ends.
+You can’t lose the game this turn and your opponents can’t win the game this turn. Until end of turn, damage that would reduce your life total to less than 1 reduces it to 1 instead.
+Put a +1/+1 count on target creature. At the beginning of the next turn’s upkeep, proliferate.
+Until your next turn, whenever a creature would deal damage to you or a permanent you control, it deals double that damage instead.
+Whenever one or more creatures you control attack, untap all creatures the defending player controls.
+Untap all lands you control.
