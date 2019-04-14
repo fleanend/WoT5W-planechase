@@ -8,8 +8,8 @@ using Android.Graphics.Drawables;
 using Android.Graphics;
 using Android.Util;
 using Android.Views;
-using UK.CO.Senab.Photoview;
 using System;
+using ImageViews.Photo;
 //using Android.Locations.GpsStatus;
 
 namespace Dothraki_and_Fugue {
@@ -30,6 +30,8 @@ namespace Dothraki_and_Fugue {
         int _index = 0;
         int _done = 0;
 
+        List<string> _wild_effects;
+
         private PhotoViewAttacher _attacher;
 
         protected override void OnCreate(Bundle bundle)
@@ -49,6 +51,17 @@ namespace Dothraki_and_Fugue {
             _phenomenon_button.Visibility = ViewStates.Invisible;
             _upleft_button.Visibility = ViewStates.Invisible;
             _downleft_button.Visibility = ViewStates.Invisible;
+
+            _wild_effects = new List<string>();
+
+            using (System.IO.StreamReader sr = new System.IO.StreamReader(_assets.Open("effetti.txt")))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    _wild_effects.Add(line);
+                }
+            }
 
             _gestureDetector = new GestureDetector(this);
            
@@ -90,9 +103,7 @@ namespace Dothraki_and_Fugue {
             _currentPlaneView.SetImageDrawable(_currentPlane.Bm);
             _attacher = new PhotoViewAttacher(_currentPlaneView);
 
-            _attacher.SingleFling += ( sender, e ) => {
-                OnFling(e.P0, e.P1, e.P2, e.P3);
-            };
+            _attacher.SingleFling += new EventHandler<SingleFlingEventArgs>(OnSingleFling);
 
             _attacher.Update();
 
@@ -100,6 +111,13 @@ namespace Dothraki_and_Fugue {
             _done = 1;
             this.Window.AddFlags(WindowManagerFlags.KeepScreenOn);
 
+        }
+
+        private void OnSingleFling(object sender, SingleFlingEventArgs e)
+        {
+            var e1 = e.Event1;
+            var e2 = e.Event2;
+            OnFling(e1, e2, 0, 0);
         }
 
         public static List<T> Randomize<T>(List<T> list)
@@ -119,6 +137,7 @@ namespace Dothraki_and_Fugue {
         {
             return false;
         }
+
 
         public bool OnFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)
         {
@@ -144,8 +163,38 @@ namespace Dothraki_and_Fugue {
         {
             if (_currentPlane.Name == "dnd_Tearfall")
             {
-                _phenomenon_button.Visibility = ViewStates.Visible;
+                if (_phenomenon_button.Visibility != ViewStates.Visible)
+                { 
+                    _phenomenon_button.Visibility = ViewStates.Visible;
+                    _phenomenon_button.Click += new EventHandler(WildMagic);
+                    _phenomenon_button.LongClick += new EventHandler<View.LongClickEventArgs>(FinishWildMagic);
+                }
             }
+        }
+
+        private void FinishWildMagic(object sender, View.LongClickEventArgs e)
+        {
+            var button = sender as ImageButton;
+            button.Visibility = ViewStates.Invisible;
+            button.Click -= WildMagic;
+            button.LongClick -= FinishWildMagic;
+        }
+
+        private void WildMagic(object sender, EventArgs e)
+        {
+            _dialog = new Dialog(this);
+            _dialog.SetContentView(Resource.Layout.secondlayout);
+
+            System.Random rnd = new System.Random();
+            int random_ind = rnd.Next(_wild_effects.Count);
+            string effect = _wild_effects[random_ind];
+
+            _dialog.SetTitle("Wild Magic!");
+
+            _dialog.SetCancelable(true);
+            TextView text = _dialog.FindViewById<TextView>(Resource.Id.DialogView);
+            text.Text = effect;
+            _dialog.Show();
         }
 
         protected override void OnDestroy()
