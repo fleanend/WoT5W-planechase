@@ -7,7 +7,7 @@ public class AppPreferences
     private ISharedPreferencesEditor mPrefsEditor;
     private Context mContext;
 
-    private static string PREFERENCE_ACCESS_KEY = "PREFERENCE_ACCESS_KEY";
+    private static string DECK_LIST = "DECK_LIST";
 
     public AppPreferences(Context context)
     {
@@ -16,16 +16,17 @@ public class AppPreferences
         mPrefsEditor = mSharedPrefs.Edit();
     }
 
-    public void saveAccessKey(string key)
+    public void saveDeckList(string deck_list)
     {
-        mPrefsEditor.PutString(PREFERENCE_ACCESS_KEY, key);
+        mPrefsEditor.PutString(DECK_LIST, deck_list);
         mPrefsEditor.Commit();
     }
 
-    public string getAccessKey()
+    public string loadDeckList()
     {
-        return mSharedPrefs.GetString(PREFERENCE_ACCESS_KEY, "");
+        return mSharedPrefs.GetString(DECK_LIST, "");
     }
+
 
 
 }

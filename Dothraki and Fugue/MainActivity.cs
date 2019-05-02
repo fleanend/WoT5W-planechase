@@ -10,14 +10,18 @@ using Android.Util;
 using Android.Views;
 using System;
 using ImageViews.Photo;
+using Android.Content;
+using System.Linq;
 //using Android.Locations.GpsStatus;
 
 namespace Dothraki_and_Fugue {
-    [Activity(Label = "Wot5W", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Landscape)]
 
+    [Activity(Label = "Wot5W", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Landscape)]
 
     public class MainActivity : Activity, GestureDetector.IOnGestureListener
     {
+        public static Context mContext = Android.App.Application.Context;
+        AppPreferences ap = new AppPreferences(mContext);
         GestureDetector _gestureDetector;
         Card _currentPlane;
         ImageView _currentPlaneView;
@@ -27,6 +31,7 @@ namespace Dothraki_and_Fugue {
         AssetManager _assets;
         Dialog _dialog;
         List<Card> _cards;
+        List<int> _cards_indices;
         int _index = 0;
         int _done = 0;
 
@@ -43,6 +48,7 @@ namespace Dothraki_and_Fugue {
             _assets = this.Assets;
             var content = _assets.List("Cards");
             _cards = new List<Card>();// = ArrayList<Card>
+            _cards_indices = new List<int>();
             _currentPlaneView = FindViewById<ImageView>(Resource.Id.imageView1);
             _phenomenon_button = FindViewById<ImageButton>(Resource.Id.imageButton1);
             _upleft_button = FindViewById<ImageButton>(Resource.Id.imageButton2);
@@ -70,11 +76,12 @@ namespace Dothraki_and_Fugue {
 
             string[] toolTips = new string[content.Length];
 
-            int k = 0;
+            int ci = 0;
             foreach (string c in content)
             {
                 Card cur = Card.MyRegex(c);
                 _cards.Add(cur);
+                _cards_indices.Add(ci++);
             }
 
 
@@ -91,14 +98,46 @@ namespace Dothraki_and_Fugue {
                 // load image as Drawable
                 _cards[i].Bm =  new BitmapDrawable(BitmapFactory.DecodeStream(ims));
             }
-            _cards = Randomize(_cards);
+
+
+            if (ap.loadDeckList() == "")
+            {
+                _cards_indices = Randomize(_cards_indices);
+            }
+            else
+            {
+                _cards_indices.Clear();
+                foreach (string card_index in ap.loadDeckList().Split(';'))
+                {
+                    _cards_indices.Add(Convert.ToInt32(card_index));
+                }
+                AlertDialog.Builder alertDiag = new AlertDialog.Builder(this);
+                alertDiag.SetTitle("Restart Anew");
+                alertDiag.SetMessage("Do you really want to reset the Planechase?");
+                alertDiag.SetPositiveButton("Reset", (senderAlert, args) => { //TOCOMPLETE
+                    _cards_indices.Clear();
+                    int cid = 0;
+                    foreach (var c in _cards)
+                    {
+                        _cards_indices.Add(cid++);
+                    }
+                    _cards_indices = Randomize(_cards_indices);
+                    Toast.MakeText(this, "Done", ToastLength.Short).Show();
+                });
+                alertDiag.SetNegativeButton("Cancel", (senderAlert, args) => {
+                    alertDiag.Dispose();
+                });
+                Dialog diag = alertDiag.Create();
+                diag.Show();
+            }
+
 
             _phenomenon_button.SetImageResource(Resource.Drawable.sorcerericon);
 
             // set image to ImageView
 
             _currentPlaneView.SetScaleType(ImageView.ScaleType.FitCenter);
-            _currentPlane = _cards[0];
+            _currentPlane = _cards[_cards_indices[0]];
             _currentPlane.visited = true;
             _currentPlaneView.SetImageDrawable(_currentPlane.Bm);
             _attacher = new PhotoViewAttacher(_currentPlaneView);
@@ -111,6 +150,17 @@ namespace Dothraki_and_Fugue {
             _done = 1;
             this.Window.AddFlags(WindowManagerFlags.KeepScreenOn);
 
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+            List<string> index_to_save = new List<string>();
+            foreach (int card_i in _cards_indices)
+            {
+                index_to_save.Add(card_i.ToString());
+            }
+            ap.saveDeckList(String.Join(";", index_to_save.ToArray()));
         }
 
         private void OnSingleFling(object sender, SingleFlingEventArgs e)
@@ -152,7 +202,7 @@ namespace Dothraki_and_Fugue {
                 if (_index < _cards.Count-1)
                     _index++;
             }
-            _currentPlane = _cards[_index];
+            _currentPlane = _cards[_cards_indices[_index]];
             _currentPlaneView.SetImageDrawable(_currentPlane.Bm);
             _plane_logic();
             _currentPlane.visited = true;
@@ -207,6 +257,7 @@ namespace Dothraki_and_Fugue {
 
         public void OnLongPress(MotionEvent e)
         {
+
         }
 
         public bool OnScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY)
@@ -228,6 +279,7 @@ namespace Dothraki_and_Fugue {
             _gestureDetector.OnTouchEvent(e);
             return false;
         }
+
     }
 
 }

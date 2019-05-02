@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Card.cs" />
+    <Compile Include="AppPreferences.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Phenomenon.cs" />
     <Compile Include="Plane.cs" />
