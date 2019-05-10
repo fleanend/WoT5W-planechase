@@ -28,6 +28,7 @@ namespace Dothraki_and_Fugue {
         ImageButton _phenomenon_button;
         ImageButton _upleft_button;
         ImageButton _downleft_button;
+        ImageButton _menu_button; //menu: restart glossary, rules
         AssetManager _assets;
         Dialog _dialog;
         List<Card> _cards;
@@ -53,10 +54,12 @@ namespace Dothraki_and_Fugue {
             _phenomenon_button = FindViewById<ImageButton>(Resource.Id.imageButton1);
             _upleft_button = FindViewById<ImageButton>(Resource.Id.imageButton2);
             _downleft_button = FindViewById<ImageButton>(Resource.Id.imageButton3);
+            _menu_button = FindViewById<ImageButton>(Resource.Id.imageButton4);
 
             _phenomenon_button.Visibility = ViewStates.Invisible;
             _upleft_button.Visibility = ViewStates.Invisible;
             _downleft_button.Visibility = ViewStates.Invisible;
+            _menu_button.Visibility = ViewStates.Invisible;
 
             _wild_effects = new List<string>();
 

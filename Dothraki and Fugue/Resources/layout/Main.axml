@@ -35,4 +35,12 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:id="@+id/imageButton3" />
+    <ImageButton
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/imageButton4" />
 </RelativeLayout>
